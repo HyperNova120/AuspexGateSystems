@@ -9,7 +9,7 @@ Tier 3 GPU
 Tier 3 Screen
 ]]--
 
-local Version = "0.8.16"
+local Version = "0.8.17"
 local component = require("component")
 local computer = require("computer")
 local event = require("event")
@@ -2778,7 +2778,7 @@ local EventListeners = {
         event.timer(1.5, function()
           alert("Sending IDC",1)
           os.sleep(0.5)
-          sg.sendIrisCode(OutgoingIDC)
+          sg.sendIrisCode(tostring(OutgoingIDC))
         end)
       end
     end, debug.traceback)

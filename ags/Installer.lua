@@ -31,7 +31,7 @@ if opts.d then
 └───────────────────────────┘]])
   BranchURL = "https://raw.githubusercontent.com/ShicKla/AuspexGateSystems/dev"
 else
-  BranchURL = "https://raw.githubusercontent.com/ShicKla/AuspexGateSystems/release"
+  BranchURL = "https://raw.githubusercontent.com/HyperNova120/AuspexGateSystems/release"
 end
 ReleaseVersionsFile = "/ags/releaseVersions.ff"
 ReleaseVersions = nil

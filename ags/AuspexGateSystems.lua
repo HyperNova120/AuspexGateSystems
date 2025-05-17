@@ -30,7 +30,7 @@ if opts.k then
 end
 
 local BranchMsg = ""
-local BranchURL = "https://raw.githubusercontent.com/ShicKla/AuspexGateSystems/release"
+local BranchURL = "https://raw.githubusercontent.com/HyperNova120/AuspexGateSystems/release"
 local ReleaseVersionsFile = "/ags/releaseVersions.ff"
 local ReleaseVersions = nil
 local LocalVersions = nil
