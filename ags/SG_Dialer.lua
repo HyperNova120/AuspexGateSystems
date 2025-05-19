@@ -249,6 +249,12 @@ local function writeConfig()
   file:close()
 end
 
+local function logDebugInfo(msg)
+  local file = io.open("debugInfo", "w")
+  file:write(msg)
+  file:close()
+end
+
 readConfig()
 writeConfig()
 -- Config File IO End --------------------------------------------------------------
@@ -2868,6 +2874,7 @@ local EventListeners = {
   end),
 
   modem_message = event.listen("modem_message", function(_, _, sender, port, _, msg)
+    logDebugInfo("EVENT:modem_message TYPE:"..type(msg).." MSG:"..msg)
     if port == ModemIDCPort and tonumber(msg) ~= nil then
       local code = tonumber(msg)
       if IDC == code then
@@ -2888,7 +2895,7 @@ local EventListeners = {
   end),
   
   received_code = event.listen("received_code", function(_, _, _, code)
-    print("TYPE:"..type(code).." CODE:"..code)
+    logDebugInfo("EVENT:received_code TYPE:"..type(code).." CODE:"..code)
     if IDC == code then
       if sg.getIrisState() == "CLOSED" then
         sg.toggleIris()
