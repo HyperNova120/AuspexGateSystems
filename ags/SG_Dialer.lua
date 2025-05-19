@@ -2888,6 +2888,7 @@ local EventListeners = {
   end),
   
   received_code = event.listen("received_code", function(_, _, _, code)
+    print("TYPE:"..type(code).." CODE:"..code)
     if IDC == code then
       if sg.getIrisState() == "CLOSED" then
         sg.toggleIris()
